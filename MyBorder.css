@@ -1,0 +1,229 @@
+--- 布局设置（不分模式，通用） ---
+:root{
+    --border-radius-activated-tab-header-dark: 10px !important;
+    --border-radius-activated-tab-header-light: 10px !important;
+}
+:root {
+    --radius-s: 8px !important;
+}
+.vertical-tab-nav-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+}
+
+.vertical-tab-nav-item-title {
+    font-size: 13px;
+}
+
+.cm-formatting-list-ol {
+    padding-right: 0.5rem !important;
+    font-family: 'inter';
+    font-size: 14px;
+}
+
+.inline-title {
+    font-size: 20px !important;
+    -webkit-text-stroke: 0.03rem;
+}
+
+.cm-contentContainer {
+    font-weight: 400;
+    -webkit-text-stroke: 0.02rem;
+    padding-top: 0.5rem !important;
+}
+
+.cm-strong {
+    font-family: "PingFang SC";
+    font-weight: 600;
+}
+.cm-inline-code:not(.cm-formatting-code){
+    border: 1px solid !important;
+}
+.cm-inline-code{
+    background: none !important;
+    --code-styler-inline-padding-vertical: 0.15rem !important;
+}
+
+.cm-line{
+    padding-top: 0.7rem !important;
+
+}
+.code-styler.code-styler-style-inline .cm-s-obsidian span.cm-formatting-code + span.cm-inline-code:not(.cm-formatting-code){
+    border-radius: 6px !important;
+}
+
+/* --- 标题设置 --- */
+.HyperMD-header-1 {
+    font-size: 20px !important;
+    -webkit-text-stroke: 0.02rem;
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+.HyperMD-header-2 {
+    font-size: 18.5px !important;
+    -webkit-text-stroke: 0.02rem;
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+.HyperMD-header-3 {
+    font-size: 17px !important;
+    -webkit-text-stroke: 0.01rem;
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+.HyperMD-header-4 {
+    font-size: 17px !important;
+    -webkit-text-stroke: 0.01rem;
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+.HyperMD-header-5 {
+    font-size: 17px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+    
+}
+.HyperMD-header-6 {
+    font-size: 17px !important;
+    font-weight: 500;
+    padding-top: 2rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+
+.mod-left-split{
+    margin-right: 8px !important;
+    margin-left: 0px !important;
+}
+.mod-right-split{
+    margin-left: 8px !important;
+}
+.workspace-tab-header-container-inner{
+    padding-right: 0 !important;
+    padding-left: 1px !important;
+}
+/* .workspace-tab-header-container{
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+} */
+#editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex{
+    height: 38px !important;          /* 4. 根据需要设置高度 */
+    
+    padding-top: calc(var(--toolbar-icon-size) / 4)+3px !important;
+    padding-bottom: calc(var(--toolbar-icon-size) / 4)+3px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+#editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex
+{
+    border-radius: 30px !important;
+}
+
+:is(#editingToolbarModalBar, #editingToolbarPopoverBar) button[class^=editingToolbarCommandsubItem]>.subitem{
+    /* background-color: transparent !important; */
+    /* background: rgba(48, 48, 48, 0.06) !important; */
+    /* transition: none !important;
+    -webkit-transition: none !important; */
+    /* visibility: visible; */
+    border-radius: 30px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-top: 7px !important;
+}
+/* .theme-dark #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex::before {
+    content: "";         
+    display: block;      
+    position: absolute;  
+    inset: 0;           
+    z-index: -1;         
+    border-radius: 30px !important;
+    backdrop-filter: blur(2px); 
+    -webkit-backdrop-filter: blur(2px);
+}    */
+
+/* .theme-dark :is(#editingToolbarModalBar, #editingToolbarPopoverBar) button[class^=editingToolbarCommandsubItem]>.subitem{
+    -webkit-backdrop-filter: blur(2px); 
+    backdrop-filter: blur(2px) !important; 
+} */
+
+/* --- 颜色设置（仅在浅色模式生效） --- */
+.theme-light .cm-formatting-list-ol {
+    color: #303030 !important;
+}
+
+.theme-light .cm-contentContainer {
+    color: #303030;
+}
+
+.theme-light .cm-strong {
+    color: #202020;
+}
+
+.theme-light .cm-inline-code{
+    border-color: #202020 !important;
+}
+.theme-light .inline-title {
+    color: #303030 !important;
+}
+.theme-light .cm-inline-code {
+    color: #da6c0b !important;
+    --code-styler-inline-background-colour: #f9f9f9 !important;
+    border-color: #e2e2e2 !important;
+}
+
+.theme-light .cm-inline-code.cm-formatting-code {
+    color: #da6c0b !important;
+    --code-styler-inline-background-colour: transparent !important;
+}
+.theme-light #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex{
+    --editing-toolbar-background-color: #fafafa !important;
+    border: 1px solid rgba(36, 36, 36, 0.1); 
+}
+.theme-light :is(#editingToolbarModalBar, #editingToolbarPopoverBar) button[class^=editingToolbarCommandsubItem]>.subitem{
+    /* --editing-toolbar-background-color: #202020a0; */
+    --editing-toolbar-background-color: #fafafa !important;
+    border: 1px solid rgba(36, 36, 36, 0.1); 
+    /* border: 1px solid rgba(255, 255, 255, 0.1);  */
+}
+
+
+
+/* --- 颜色设置（仅在暗色模式生效） --- */
+.theme-dark .cm-formatting-list-ol {
+    color: #f0f0f0 !important;
+}
+.theme-dark .cm-contentContainer {
+    color: #f0f0f0;
+}
+.theme-dark .cm-strong {
+    color: #ffffff;
+}
+.theme-dark .cm-inline-code {
+    color: #ddc2aa !important;
+    background-color: #292929da !important;
+    border-color: #3d3d3d !important;
+}
+
+.theme-dark .cm-inline-code.cm-formatting-code {
+    color: #ddc2aa !important;
+    background-color: transparent !important;
+    border-color: #3d3d3d !important;
+}
+
+.theme-dark .inline-title {
+    color: #f0f0f0 !important;
+}
+.theme-dark #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex{
+    --editing-toolbar-background-color: #202020ef !important;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+.theme-dark :is(#editingToolbarModalBar, #editingToolbarPopoverBar) button[class^=editingToolbarCommandsubItem]>.subitem{
+    --editing-toolbar-background-color: #202020ef ;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
