@@ -1,4 +1,6 @@
---- 布局设置（不分模式，通用） ---
+/* ------------------------------ 布局设置（不分模式，通用) ----------------------------- */
+
+/* ----------------------------------- 全局 ----------------------------------- */
 :root{
     --border-radius-activated-tab-header-dark: 10px !important;
     --border-radius-activated-tab-header-light: 10px !important;
@@ -16,12 +18,16 @@
     font-size: 13px;
 }
 
+
+/* ----------------------------------- 序号 ----------------------------------- */
 .cm-formatting-list-ol {
-    padding-right: 0.5rem !important;
+    padding-left: 0px;
+    padding-right: 0 !important;
     font-family: 'inter';
     font-size: 14px;
 }
 
+/* -------------------------------- 标题、正文、粗体 -------------------------------- */
 .inline-title {
     font-size: 20px !important;
     -webkit-text-stroke: 0.03rem;
@@ -33,58 +39,114 @@
     padding-top: 0.5rem !important;
 }
 
-.cm-strong {
+.cm-strong > *{
     font-family: "PingFang SC";
-    font-weight: 600;
+    /* -webkit-text-stroke: 0.02rem !important; */
+    font-weight: 600 !important;
 }
+
+
+/* ----------------------------------- 代码块 ---------------------------------- */
 .cm-inline-code:not(.cm-formatting-code){
     border: 1px solid !important;
 }
-.cm-inline-code{
+.HyperMD-codeblock{
+    --code-border: 1px solid var(--background-modifier-border) !important;
+}
+.cm-inline-code, .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line]{
     background: none !important;
     --code-styler-inline-padding-vertical: 0.15rem !important;
 }
-
-.cm-line{
-    padding-top: 0.7rem !important;
-
+.code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-]{
+    background: none !important;
+    
 }
+
 .code-styler.code-styler-style-inline .cm-s-obsidian span.cm-formatting-code + span.cm-inline-code:not(.cm-formatting-code){
     border-radius: 6px !important;
 }
 
-/* --- 标题设置 --- */
+/* ---------------------------------- 全局行距 ---------------------------------- */
+.cm-line{
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+
+}
+
+/* ----------------------------------- 注释 ----------------------------------- */
+.cm-line:has(.cm-comment){
+    opacity: 0.6;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 10px !important;
+}
+.cm-comment.cm-formatting{
+    opacity: 0.4;
+    font-size: 10px;
+}
+
+
+/* ----------------------------------- 任务列表 ----------------------------------- */
+.task-list-item-checkbox:has(:after){
+    --checkbox-radius: 0.3rem !important;
+    border: none !important;
+}
+
+.task-list-item-checkbox:not(:has(:after)){
+    --checkbox-radius: 0.3rem !important;
+    border: 2px solid var(--checkbox-border-color) !important;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"]{
+    text-decoration: none;
+}
+
+
+/* -------------------------------- 列表内不同字体样式 ------------------------------- */
+.HyperMD-task-line[data-task="x"] .cm-strong{
+    color: #21212167 !important;
+}
+.HyperMD-task-line[data-task="x"] .cm-underline{
+    color: #607dd292 !important;
+    transition: none;
+}
+.HyperMD-task-line[data-task=" "] .cm-underline{
+    transition: none;
+}
+
+
+/* ---------------------------------- 标题栏样式 --------------------------------- */
 .HyperMD-header-1 {
     font-size: 20px !important;
     -webkit-text-stroke: 0.02rem;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
     line-height: 1.4 !important;
 }
 .HyperMD-header-2 {
     font-size: 18.5px !important;
     -webkit-text-stroke: 0.02rem;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
     line-height: 1.4 !important;
 }
 .HyperMD-header-3 {
     font-size: 17px !important;
     -webkit-text-stroke: 0.01rem;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
     line-height: 1.4 !important;
 }
 .HyperMD-header-4 {
     font-size: 17px !important;
     -webkit-text-stroke: 0.01rem;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
     line-height: 1.4 !important;
 }
 .HyperMD-header-5 {
     font-size: 17px !important;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
     line-height: 1.4 !important;
     
@@ -92,11 +154,34 @@
 .HyperMD-header-6 {
     font-size: 17px !important;
     font-weight: 500;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
     line-height: 1.4 !important;
 }
 
+
+/* -------------------------- 弹窗、提示框等界面元素背景设置 -------------------------- */
+.modal.mod-canvas-help, .suggestion-container, .popover, .prompt, .menu, .suggestion-container.mod-search-suggestion{
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background-color: #f0f0f0 !important;
+}
+.notice-container .notice{
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+
+/* --------------------------------- 列表符颜色设置 --------------------------------- */
+.theme-dark .cm-s-obsidian .cm-formatting-list{
+    --list-marker-color: #f0f0f0 !important;
+}
+.theme-light .cm-s-obsidian .cm-formatting-list{
+    --list-marker-color: #303030 !important;
+}
+
+
+/* -------------------------------- 界面卡片间距缩小 -------------------------------- */
 .mod-left-split{
     margin-right: 8px !important;
     margin-left: 0px !important;
@@ -112,6 +197,9 @@
     padding-right: 0.5rem !important;
     padding-left: 0.5rem !important;
 } */
+
+
+/* -------------------------------- 移动工具栏样式设置 ------------------------------- */
 #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex{
     height: 38px !important;          /* 4. 根据需要设置高度 */
     
@@ -136,6 +224,9 @@
     padding-right: 10px !important;
     margin-top: 7px !important;
 }
+
+
+/* -------------------------------- 透明化——已弃用 -------------------------------- */
 /* .theme-dark #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex::before {
     content: "";         
     display: block;      
@@ -152,7 +243,195 @@
     backdrop-filter: blur(2px) !important; 
 } */
 
-/* --- 颜色设置（仅在浅色模式生效） --- */
+/* --------------------------------- 编辑时引号逻辑 -------------------------------- */
+.theme-light .HyperMD-quote{
+    background: none !important;
+    --blockquote-border-color: #404040 !important;
+}
+.theme-dark .HyperMD-quote{
+    background: none !important;
+    --blockquote-border-color: #F0F0F0 !important;
+}
+.HyperMD-quote::before{
+    border-start-start-radius: 4px;
+    border-start-end-radius: 4px;
+    border-end-end-radius: 4px;
+    border-end-start-radius: 4px;
+    --blockquote-border-thickness: 4px !important;
+}
+.markdown-source-view .cm-scroller .cm-line.HyperMD-quote:not(:has(.cm-formatting-quote))::before{
+    content: none !important;
+}
+.markdown-source-view .cm-scroller .cm-line.HyperMD-quote:not(:has(.cm-formatting-quote))>.cm-quote-1{
+    padding-left: 0px !important;
+}
+.HyperMD-quote-lazy {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.HyperMD-quote-1{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    --blockquote-padding: 0px !important;
+    border-left: 0px;
+    /* padding-left: 0px !important; */
+    
+}
+.markdown-source-view.mod-cm6 .cm-content > *.HyperMD-quote-1{
+    margin-left: 3px !important;
+}
+.markdown-source-view.mod-cm6 .cm-content>div:first-of-type {
+    padding-top: 5px !important;
+}
+.HyperMD-quote-1::before{
+    height: calc(100% + 4px); 
+    /* height: 40px !important; */
+}
+.cm-s-obsidian span.cm-quote{
+    padding-left: 6px !important;
+}
+
+
+/* --------------------------------- 内部链接样式设置 --------------------------------- */
+
+.internal-link, .cm-hmd-internal-link .cm-underline, .cm-hmd-internal-link{
+/* text-decoration: none; */
+  /* text-decoration: none !important; */
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 400;
+    text-decoration-thickness: 1px;
+    -webkit-text-stroke: 0.02rem !important;
+  
+  /* 3. 设定下移偏移量：2px 到 3px 之间 */
+    text-underline-offset: 4px; 
+}
+.theme-dark .internal-link{
+    --link-color: #96a4dd !important;
+    --link-color-hover: #c4cbe9 !important;
+}
+.theme-dark  .cm-hmd-internal-link .cm-underline, .theme-dark .cm-hmd-internal-link{
+    color: #96a4dd !important;
+    border-radius: 8px;
+}
+/* .internal-link, .cm-hmd-internal-link:hover {
+  text-decoration-thickness: 2px;
+} */
+
+
+/* --------------------------------- 列表符样式设置 -------------------------------- */
+
+.HyperMD-list-line-1 >.cm-formatting-list-ul{
+    padding-left: 0px;
+    padding-right: 13px;
+}
+.cm-formatting-list-ol{
+    padding-right: 11px !important;
+}
+
+/* --------------------------------- 标签样式设置 --------------------------------- */
+
+.cm-line:has(.cm-formatting-hashtag){
+    padding-bottom: 30px !important;
+}
+
+.tag{
+    --tag-radius: 4px !important;
+    border:none !important;
+    --tag-background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2) !important;
+    --tag-background-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3) !important;
+}
+/* .theme-light .tag{
+    --tag-color: color-mix(in srgb, var(--color-accent-light) 60%, #f0f0f0)  !important;
+    --tag-color-hover: color-mix(in srgb, var(--color-accent-light) 70%, #f0f0f0)  !important;
+}
+.theme-dark .tag{
+    --tag-color: color-mix(in srgb, var(--color-accent-dark) 90%, #202020)  !important;
+    --tag-color-hover: color-mix(in srgb, var(--color-accent-dark) 97%, #202020)  !important;
+} */
+
+.cm-line .cm-hashtag{
+    transition: all 0.2s ease;
+    --tag-radius: 8px !important;
+    border:none !important;
+    --tag-background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2) !important;
+    --tag-background-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.3) !important;
+}
+.cm-formatting-hashtag.cm-hashtag{
+    font-size: 16px !important;
+    padding-top: 2.5px ;
+    padding-bottom: 2.50px;
+    padding-right: 4px;
+}
+.theme-light .cm-formatting-hashtag.cm-hashtag{
+    --tag-color: color-mix(in srgb, var(--color-accent-light) 60%, #f0f0f0)  !important;
+    --tag-color-hover: color-mix(in srgb, var(--color-accent-light) 70%, #f0f0f0)  !important;
+}
+.theme-dark .cm-formatting-hashtag.cm-hashtag{
+    --tag-color: color-mix(in srgb, var(--color-accent-dark) 90%, #202020)  !important;
+    --tag-color-hover: color-mix(in srgb, var(--color-accent-dark) 97%, #202020)  !important;
+}
+
+.theme-dark .cm-hashtag-end{
+    --tag-color: color-mix(in srgb, var(--color-accent-dark) 90%, #f0f0f0)  !important;
+    --tag-color-hover: color-mix(in srgb, var(--color-accent-dark) 85%, #f0f0f0)  !important;
+}
+
+.cm-hashtag-end{
+    font-size: 14px !important;
+    padding-top: 3.5px ;
+    padding-bottom: 3.75px;
+    vertical-align: 1px;
+}
+
+
+/* --------------------------------- 代码块样式设置 --------------------------------- */
+
+
+.theme-light .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-]{
+    background-image: none !important;
+    background-color: #fbfbfb !important;
+}
+.theme-light .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line]{
+    background-image: none !important;
+    background-color: #fbfbfb !important;
+}
+.theme-light .code-styler-line-number{
+    color: #404040 !important;
+    background-color: #f8f8f8 !important;
+    border-right: 1px solid #e0e0e0 !important;
+}
+.theme-light .code-styler{
+    --code-border-light: 1px solid #e0e0e0 !important;
+    --code-border-dark: 1px solid #e0e0e0 !important
+}
+.code-styler{
+    --border-radius:10px !important;
+}
+
+.theme-dark.code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-]{
+    background-image: none !important;
+    background-color: #292929 !important;
+}
+.theme-dark .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line]{
+    background-image: none !important;
+    /* background-color: #404040 !important; */
+}
+.theme-dark .code-styler-line-number{
+    color: #A0A0A0 !important;
+    background-color: #2E2E2E !important;
+    border-right: 1px solid #404040 !important;
+}
+.theme-dark.code-styler{
+    --border-radius:10px !important;
+    --code-border-light: 1px solid #3d3d3d !important;
+    --code-border-dark: 1px solid #3d3d3d !important;
+}
+
+
+
+/* ----------------------------- 颜色设置（仅在浅色模式生效） ----------------------------- */
 .theme-light .cm-formatting-list-ol {
     color: #303030 !important;
 }
@@ -163,6 +442,7 @@
 
 .theme-light .cm-strong {
     color: #202020;
+    --bold-color: #202020 !important;
 }
 
 .theme-light .cm-inline-code{
@@ -183,7 +463,7 @@
 }
 .theme-light #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex{
     --editing-toolbar-background-color: #fafafa !important;
-    border: 1px solid rgba(36, 36, 36, 0.1); 
+    border: 1px solid rgba(36, 36, 36, 0.1);  
 }
 .theme-light :is(#editingToolbarModalBar, #editingToolbarPopoverBar) button[class^=editingToolbarCommandsubItem]>.subitem{
     /* --editing-toolbar-background-color: #202020a0; */
@@ -194,7 +474,7 @@
 
 
 
-/* --- 颜色设置（仅在暗色模式生效） --- */
+/* ----------------------------- 颜色设置（仅在暗色模式生效） ----------------------------- */
 .theme-dark .cm-formatting-list-ol {
     color: #f0f0f0 !important;
 }
@@ -203,6 +483,7 @@
 }
 .theme-dark .cm-strong {
     color: #ffffff;
+    --bold-color: #ffffff !important;
 }
 .theme-dark .cm-inline-code {
     color: #ddc2aa !important;
@@ -220,10 +501,14 @@
     color: #f0f0f0 !important;
 }
 .theme-dark #editingToolbarModalBar.editingToolbarCustomAesthetic.editingToolbarFlex{
-    --editing-toolbar-background-color: #202020ef !important;
+    --editing-toolbar-background-color: #202020FA !important;
     border: 1px solid rgba(255, 255, 255, 0.1); 
 }
 .theme-dark :is(#editingToolbarModalBar, #editingToolbarPopoverBar) button[class^=editingToolbarCommandsubItem]>.subitem{
-    --editing-toolbar-background-color: #202020ef ;
+    --editing-toolbar-background-color: #202020FA ;
     border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+.theme-dark .suggestion-container{
+    /* visibility: hidden !important; */
+    background-color: #303030 !important;
 }
