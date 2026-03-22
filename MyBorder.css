@@ -41,7 +41,7 @@
 
 .cm-strong > *{
     font-family: "PingFang SC";
-    /* -webkit-text-stroke: 0.02rem !important; */
+    -webkit-text-stroke: 0.02rem !important;
     font-weight: 600 !important;
 }
 
@@ -54,12 +54,11 @@
     --code-border: 1px solid var(--background-modifier-border) !important;
 }
 .cm-inline-code, .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line]{
-    background: none !important;
+    background-image: none !important;
     --code-styler-inline-padding-vertical: 0.15rem !important;
 }
 .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-]{
     background: none !important;
-    
 }
 
 .code-styler.code-styler-style-inline .cm-s-obsidian span.cm-formatting-code + span.cm-inline-code:not(.cm-formatting-code){
@@ -103,8 +102,11 @@
 
 
 /* -------------------------------- 列表内不同字体样式 ------------------------------- */
-.HyperMD-task-line[data-task="x"] .cm-strong{
+.theme-light .HyperMD-task-line[data-task="x"] .cm-strong{
     color: #21212167 !important;
+}
+.theme-dark .HyperMD-task-line[data-task="x"] .cm-strong{
+    color: hsl(228, 9%, 60%) !important;
 }
 .HyperMD-task-line[data-task="x"] .cm-underline{
     color: #607dd292 !important;
@@ -171,6 +173,13 @@
     -webkit-backdrop-filter: none !important;
 }
 
+
+/* --------------------------------- 文件夹列表高亮 -------------------------------- */
+
+.nav-files-container .is-flashing{
+    background-color: transparent !important;
+    --text-highlight-bg: transparent !important;
+}
 
 /* --------------------------------- 列表符颜色设置 --------------------------------- */
 .theme-dark .cm-s-obsidian .cm-formatting-list{
@@ -250,7 +259,7 @@
 }
 .theme-dark .HyperMD-quote{
     background: none !important;
-    --blockquote-border-color: #F0F0F0 !important;
+    --blockquote-border-color: #f0f0f0 !important;
 }
 .HyperMD-quote::before{
     border-start-start-radius: 4px;
@@ -369,13 +378,15 @@
     --tag-color-hover: color-mix(in srgb, var(--color-accent-light) 70%, #f0f0f0)  !important;
 }
 .theme-dark .cm-formatting-hashtag.cm-hashtag{
-    --tag-color: color-mix(in srgb, var(--color-accent-dark) 90%, #202020)  !important;
-    --tag-color-hover: color-mix(in srgb, var(--color-accent-dark) 97%, #202020)  !important;
+    --tag-color: color-mix(in srgb, color-mix(in srgb, var(--color-accent-dark) 55%, #e6e6e6) 60%, #202020)  !important;
+    --tag-color-hover: color-mix(in srgb, color-mix(in srgb, var(--color-accent-dark) 55%, #e6e6e6) 80%, #202020)  !important;
 }
 
 .theme-dark .cm-hashtag-end{
-    --tag-color: color-mix(in srgb, var(--color-accent-dark) 90%, #f0f0f0)  !important;
-    --tag-color-hover: color-mix(in srgb, var(--color-accent-dark) 85%, #f0f0f0)  !important;
+    /* --tag-color: #7e92d5 !important;
+    --tag-color-hover: #6380d4 !important; */
+    --tag-color: color-mix(in srgb, var(--color-accent-dark) 55%, #e6e6e6)  !important;
+    --tag-color-hover: color-mix(in srgb, var(--color-accent-dark) 40%, #e6e6e6)  !important;
 }
 
 .cm-hashtag-end{
@@ -389,17 +400,17 @@
 /* --------------------------------- 代码块样式设置 --------------------------------- */
 
 
-.theme-light .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-]{
+.theme-light .code-styler-line.HyperMD-codeblock.HyperMD-codeblock-bg.cm-line{
     background-image: none !important;
-    background-color: #fbfbfb !important;
+    background-color: #f8f8f8 !important;
 }
 .theme-light .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line]{
     background-image: none !important;
-    background-color: #fbfbfb !important;
+    background-color: #f8f8f8 !important;
 }
 .theme-light .code-styler-line-number{
     color: #404040 !important;
-    background-color: #f8f8f8 !important;
+    background-color: #f4f4f4 !important;
     border-right: 1px solid #e0e0e0 !important;
 }
 .theme-light .code-styler{
@@ -410,20 +421,16 @@
     --border-radius:10px !important;
 }
 
-.theme-dark.code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line][class*=language-]{
+.theme-dark .code-styler-line.HyperMD-codeblock.HyperMD-codeblock-bg.cm-line{
     background-image: none !important;
-    background-color: #292929 !important;
-}
-.theme-dark .code-styler .markdown-source-view .HyperMD-codeblock[class*=code-styler-line]{
-    background-image: none !important;
-    /* background-color: #404040 !important; */
+    background-color: #292929da !important;
 }
 .theme-dark .code-styler-line-number{
     color: #A0A0A0 !important;
     background-color: #2E2E2E !important;
-    border-right: 1px solid #404040 !important;
+    border-right: 1px solid #363636 !important;
 }
-.theme-dark.code-styler{
+.theme-dark .code-styler{
     --border-radius:10px !important;
     --code-border-light: 1px solid #3d3d3d !important;
     --code-border-dark: 1px solid #3d3d3d !important;
